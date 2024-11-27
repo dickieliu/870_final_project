@@ -1,0 +1,9 @@
+[sshd]
+enabled = true
+port = 8181
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 1
+bantime = 300
+action =  iptables-multiport[name=SSH, port="8181", protocol=tcp] 
+	  twilio_alert
